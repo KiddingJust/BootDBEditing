@@ -101,6 +101,7 @@ public class KakaoLogin {
 	public static UserVO changeData(JsonNode userInfo) {
 		UserVO vo = new UserVO();
 		System.out.println("userInfo: " + userInfo);
+		vo.setStatus('O');
 		vo.setSns_id(userInfo.path("id").asText()); // id -> vo 넣기
 //		if (userInfo.path("kaccount_email_verified").asText().equals("true")) { // 이메일 받기 허용 한 경우
 //			vo.setUser_email(userInfo.path("kaccount_email").asText()); // email -> vo 넣기
@@ -119,6 +120,8 @@ public class KakaoLogin {
 		if (properties.has("nickname")) {
 			vo.setNickname(properties.path("nickname").asText());
 		}
+		
+		
 		return vo;
 	}
 }

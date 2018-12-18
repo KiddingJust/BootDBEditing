@@ -1,5 +1,6 @@
 package org.gorany;
 
+import org.gorany.domain.UserVO;
 import org.gorany.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,6 +22,20 @@ public class MapperTest {
 	@Test
 	public void testGet() {
 		log.info("" + mapper.getUserList());
+	}
+	
+	
+	@Test
+	public void testRegister() {
+			
+		UserVO vo = new UserVO();
+		vo.setNickname("gaaaaaik");
+		vo.setEmail("rlarkdlr@bit.com");
+		vo.setSns_id("193852034");
+		vo.setStatus('0');
+		
+		log.info("" + mapper.registerUser(vo));
+		
 	}
 	
 	

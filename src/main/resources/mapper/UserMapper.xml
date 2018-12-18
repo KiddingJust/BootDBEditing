@@ -10,9 +10,9 @@
  	</select>
 
  	<insert id="registerUser">
- 		select now()
+ 		insert into user (uid, upw, nickname, email, sns_id, status)
+ 		values ("user_kakao", "12345678", #{nickname}, #{email}, #{sns_id}, #{status})
  	</insert> 
- 	
  </mapper>
 
  
